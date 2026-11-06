@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Gracias a todos! ❤️✨</title>
+  <style>
+    :root {
+      --primary-color: #e65c00;
+      --secondary-color: #F9D423;
+      --card-bg: #ffffff;
+      --text-color: #4a4a4a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeIn 1s forwards ease-out;
+    }
+
+    @keyframes fadeIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .icon {
+      font-size: 50px;
+      margin-bottom: 10px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      color: #d94b4b;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffe5e5;
+      color: #d94b4b;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.95em;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .letter-content {
+      text-align: left;
+      line-height: 1.8;
+      color: var(--text-color);
+      font-size: 1.05em;
+    }
+
+    .letter-content p {
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      color: #d94b4b;
+      font-weight: 600;
+    }
+
+    .message-card {
+      background: #fff9f5;
+      border: 1px dashed #fcb69f;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px dashed #eee;
+      font-weight: 600;
+      color: #d94b4b;
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: rgba(217, 75, 75, 0.2);
+      font-size: 20px;
+      user-select: none;
+      pointer-events: none;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="icon">🥳✨🎉</div>
+    <h1>¡Infinitas Gracias!</h1>
+    <div class="badge">Un mensaje especial para todos</div>
+
+    <div class="letter-content">
+      <p>Hola a todos,</p>
+
+      <p>Paso por aquí para agradecerles de todo corazón por cada mensaje, llamada, abrazo y bonito deseo que me hicieron llegar con motivo de mi cumpleaños.</p>
+
+      <div class="message-card">
+        "Tener personas tan especiales en mi vida es sin duda el mejor regalo de todos." ❤️
+      </div>
+
+      <p>Gracias por tomarse un momento de su día para saludarme, sacarme una sonrisa y hacerme sentir tan querida y acompañada.</p>
+
+      <p>Deseo de vuelta para sus vidas el doble de todo el cariño, la salud, la alegría y las bendiciones que me enviaron.</p>
+    </div>
+
+    <div class="footer">
+      ¡Les mando un abrazo enorme a todos! 🤗❤️
+    </div>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      heart.innerHTML = ['❤️', '✨', '🎉', '🌟'][Math.floor(Math.random() * 4)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+      heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
